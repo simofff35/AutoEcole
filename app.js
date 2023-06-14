@@ -1,17 +1,17 @@
 // Requirement
-const bodyParser = require("body-parser");
 const express = require("express");
-const mongoose = require("mongoose");
+const path = require("path");
+const myRouter = require("./routes/router");
+const cnxUrl = "./database/Connecting";
+const cnx = require(cnxUrl);
 
 const app = express();
+app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/img", express.static(path.join(__dirname, "img")));
 
-//! Data base Schema
-// mongoose.connect("");
-
-//Routes for testing
-app.get("/", (req, res, next) => {
-  res.send("hello world");
-});
+//To the router
+app.use("/", myRouter);
 
 //Runing the app
 const port = 3000;

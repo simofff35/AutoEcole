@@ -1,0 +1,32 @@
+<header>
+  <div class="logo">LOCATION NOM</div>
+  <div class="voitures">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <nav class="nav-bar">
+    <ul>
+      <li>
+        <a href="#" class="active">Acceuil</a>
+      </li>
+      <li>
+        <a href="#">Voiture</a>
+      </li>
+      <li>
+        <a href="#">A propos de nous</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<!-- Nav JS -->
+<script>
+  voitures = document.querySelector(".voitures");
+  voitures.onclick = function () {
+    navBar = document.querySelector(".nav-bar");
+    navBar.classList.toggle("active");
+  };
+</script>

@@ -1,0 +1,28 @@
+<section class="begin" id="BEGIN">
+  <div class="hero">
+    <div class="text">
+      <h4>Nom du location</h4>
+      <h1>
+        MEILLEURE<br />
+        <span>EXPÉRIENCE</span>
+      </h1>
+      <p>
+        Découvrez la route la moins fréquentée avec nos locations de voitures de
+        premier ordre.
+      </p>
+      <a href="#" class="btn">RÉSERVER UNE VOITURE</a>
+    </div>
+  </div>
+</section>
+<!-- Begin JS -->
+<script>
+  let heroBg = document.querySelector(".hero");
+
+  setInterval(() => {
+    heroBg.style.backgroundImage = "url(/img/bg-light.jpg)";
+
+    setTimeout(() => {
+      heroBg.style.backgroundImage = "url(/img/bg.jpg)";
+    }, 700);
+  }, 1200);
+</script>

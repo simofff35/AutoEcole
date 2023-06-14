@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
+const connectionString =
+  "mongodb+srv://simo:simo@auto.cxriz3e.mongodb.net/?retryWrites=true&w=majority";
+
 //?Client
-const client = new mongoose.Schema({
+const clientSchema = new mongoose.Schema({
   Nom: {
     type: String,
     required: true,
@@ -19,7 +22,7 @@ const client = new mongoose.Schema({
   },
 });
 //?Voiture
-const voiture = new mongoose.Schema({
+const voitureSchema = new mongoose.Schema({
   Nom: {
     type: String,
     required: true,
@@ -34,7 +37,6 @@ const voiture = new mongoose.Schema({
   },
   Matricule: {
     type: String,
-    required: true,
   },
   Etat: {
     trype: String,
@@ -45,6 +47,16 @@ const voiture = new mongoose.Schema({
   Prix: {
     type: Number,
     required: true,
+  },
+  Disp: {
+    type: Boolean,
+    required: true,
+  },
+  Vitesse: {
+    type: String,
+  },
+  Image: {
+    type: String,
   },
 });
 //?Commande
@@ -67,3 +79,9 @@ const commandeSchema = new mongoose.Schema({
     type: Number,
   },
 });
+
+const Client = mongoose.model("Client", clientSchema);
+const Voiture = mongoose.model("Voiture", voitureSchema);
+const Commande = mongoose.model("Commande", commandeSchema);
+
+module.exports = { Client, Voiture, Commande };
