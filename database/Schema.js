@@ -56,7 +56,8 @@ const voitureSchema = new mongoose.Schema({
     type: String,
   },
   Image: {
-    type: String,
+    contentType: String,
+    data: Buffer,
   },
 });
 //?Commande
